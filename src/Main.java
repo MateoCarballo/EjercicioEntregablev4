@@ -7,26 +7,39 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int numeroAlumnos=0;
+        int numeroAlumnos=numAleatorioEntero(5,15);
+        int incremento=1000;
 
 
-        System.out.println("Cuantos alumnos ?");
-        numeroAlumnos=Integer.parseInt(br.readLine());
+
         Alumno[] misAlumnos = new Alumno[numeroAlumnos];
 
-        for (Alumno a:misAlumnos){
-
+        for (int i = 0; i < misAlumnos.length; i++) {
+            misAlumnos[i]=new Alumno();
+        }
+        for (int i = 0; i <  misAlumnos.length; i++) {
+            misAlumnos[i].idAlumno=incremento;
+            incremento++;
+        }
+        for (int i = 0; i < misAlumnos.length; i++) {
+            System.out.println("Posicion "+i+" del vector de Objetos valor de (idAlumno)-> "+misAlumnos[i].idAlumno);
         }
 
+        for (Alumno mA:misAlumnos){
+            System.out.println(mA.nombre);
+        }
             /*
 
             Product[] obj = new Product[5] ;
 
             System.out.println("Visualización con forEach:");
-            for (Product p:obj){
-            p.display();
-            }
+
              */
+
+
         }
+    public static int numAleatorioEntero(int limInferior, int limSuperior){
+        int aleatorio = (int)(Math.random()*(limSuperior-limInferior+1)+limInferior);
+        return aleatorio;
     }
-}
+    }

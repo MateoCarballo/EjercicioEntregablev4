@@ -2,9 +2,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Alumno {
+    int idAlumno= 0;
+
+    String dni ="99999999X";
     int numerodeMaterias=0;
     String fechaNacimiento="DD/MM/AAAA";
-    String nombre="*";
+    String nombre="****";
     int edad=0;
     String[] materias=new String[numerodeMaterias];
     int [] notas=new int[numerodeMaterias];
@@ -31,8 +34,4 @@ public class Alumno {
         this.notas = notas;
     }
 
-
-    public static void escribir(){
-
-    }
 }
